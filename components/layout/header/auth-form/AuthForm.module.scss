@@ -1,0 +1,20 @@
+/** @format */
+
+.wrapper {
+  @apply relative inline-flex;
+
+  .form {
+    @apply animate-scaleIn p-4 absolute right-2 w-60 z-20 rounded-lg;
+
+    top: calc(100% + 1.4rem);
+    background-color: #272532;
+
+    .mainButton {
+      @apply text-center mt-5 mb-1;
+    }
+
+    .register {
+      @apply text-gray-500 bg-transparent opacity-40 block text-center w-full;
+    }
+  }
+}

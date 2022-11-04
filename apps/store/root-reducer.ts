@@ -1,0 +1,12 @@
+/** @format */
+
+import { combineReducers } from '@reduxjs/toolkit'
+import { authSlice } from './auth/auth.slice'
+import { reducer as toastrReduser } from 'react-redux-toastr'
+import { api } from './api/api'
+
+export const rootReducer = combineReducers({
+  [api.reducerPath]: api.reducer,
+  auth: authSlice.reducer,
+  toastr: toastrReduser,
+})
