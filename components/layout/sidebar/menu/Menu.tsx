@@ -9,7 +9,7 @@ import MenuItem from './MenuItem'
 
 interface IMenu {
   title: string
-  items: IMenuItem[]
+  items: IMenuItem[] | any
 }
 
 const Menu: FC<IMenu> = ({ items, title }) => {
@@ -17,7 +17,7 @@ const Menu: FC<IMenu> = ({ items, title }) => {
     <div className={styles.menuSidebar}>
       <h3>{title}</h3>
       <ul>
-        {items.map(item => (
+        {items.map((item: any) => (
           <MenuItem item={item} key={item.link} />
         ))}
       </ul>

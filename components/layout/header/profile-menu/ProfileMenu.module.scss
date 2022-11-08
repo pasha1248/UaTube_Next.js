@@ -26,7 +26,7 @@
     > ul {
       > li {
         > a,
-        > buttom {
+        > button {
           @apply py-2.5 block text-white transition-colors relative;
 
           &::after {

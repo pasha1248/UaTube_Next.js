@@ -3,12 +3,12 @@
 import { axiosClassic } from '../../api/axios'
 import { IVideo } from '../../types/video.interface'
 
-export const UserService = {
+export const VideoService = {
   async getAllVideos() {
     return axiosClassic.get<IVideo[]>('/video')
   },
 
-  async getMostPopularVideos(id: number) {
-    return axiosClassic.get<IVideo>(`/video/most-popular`)
+  async getMostPopularVideos() {
+    return axiosClassic.get<IVideo[]>(`/video/most-popular`)
   },
 }
