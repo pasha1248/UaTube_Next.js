@@ -10,34 +10,39 @@ import NextProgressBar from 'nextjs-progressbar'
 import AuthProvider from '../apps/providers/AuthProvider'
 import { type } from 'os'
 import { TypeComponentAithFields } from '../apps/providers/privateRoutes.interface'
+import { QueryClient, QueryClientProvider } from 'react-query'
 
 type TypeAppProps = AppProps & TypeComponentAithFields
+
+const queryClient = new QueryClient()
 
 export default function App({ Component, pageProps }: TypeAppProps) {
   return (
     <>
-      <NextProgressBar
-        color='#FF7652'
-        startPosition={0.3}
-        stopDelayMs={200}
-        height={3}
-      />
-      <Provider store={store}>
-        <PersistGate persistor={persistor} loading={null}>
-          <AuthProvider Component={Component}>
-            <Component {...pageProps} />
-            <ReduxToastrLib
-              newestOnTop={false}
-              preventDuplicates
-              progressBar
-              closeOnToastrClick
-              timeOut={4000}
-              transitionIn='fadeIn'
-              transitionOut='fadeOut'
-            />
-          </AuthProvider>
-        </PersistGate>
-      </Provider>
+      <QueryClientProvider client={queryClient}>
+        <NextProgressBar
+          color='#FF7652'
+          startPosition={0.3}
+          stopDelayMs={200}
+          height={3}
+        />
+        <Provider store={store}>
+          <PersistGate persistor={persistor} loading={null}>
+            <AuthProvider Component={Component}>
+              <Component {...pageProps} />
+              <ReduxToastrLib
+                newestOnTop={false}
+                preventDuplicates
+                progressBar
+                closeOnToastrClick
+                timeOut={4000}
+                transitionIn='fadeIn'
+                transitionOut='fadeOut'
+              />
+            </AuthProvider>
+          </PersistGate>
+        </Provider>
+      </QueryClientProvider>
     </>
   )
 }

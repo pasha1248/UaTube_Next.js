@@ -40,7 +40,7 @@ export const videoApi = api.injectEndpoints({
     }),
     updateViews: builder.mutation<IVideo, number>({
       query: id => ({
-        url: `/${'video'}/update-views/${id}}`,
+        url: `/${'video'}/update-views/${id}`,
         method: 'PUT',
       }),
       invalidatesTags: (result, error, id) => [{ type: 'Video', id }],

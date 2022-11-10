@@ -4,6 +4,7 @@ import React from 'react'
 import { HiUpload } from 'react-icons/hi'
 import { videoApi } from '../../../../apps/store/api/video.api'
 import stylesIcon from '../icons-right/IconsRight.module.scss'
+import UploadModel from './UploadModel'
 
 type Props = {}
 
@@ -29,6 +30,7 @@ const UploadVideo = (props: Props) => {
       >
         <HiUpload />
       </button>
+      <UploadModel isOpen={isOpen} setIsOpen={setIsOpen} videoId={videoId} />
     </>
   )
 }

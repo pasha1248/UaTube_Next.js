@@ -33,11 +33,11 @@ export const getStaticProps: GetStaticProps = async () => {
     return {
       props: {
         newVideos,
-        topVideo: topVideo[0],
+        topVideo: topVideo[0] || [],
         randomVideo:
           shuffle(newVideos.filter(v => v.id !== topVideo[0].id))[0] ||
           ({} as IVideo),
-      } as unknown as IHome,
+      } as IHome,
     }
   } catch (e) {
     return {

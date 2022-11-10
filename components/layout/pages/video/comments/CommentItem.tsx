@@ -3,7 +3,7 @@
 import React, { FC } from 'react'
 import { IComment } from '../../../../../apps/types/comment.interface'
 import ChannelInfoMini from '../../../../ui/info-channel-mini/ChannelInfoMini'
-import styles from './CommentItem.module.scss'
+import styles from './Comments.module.scss'
 
 type Props = {}
 

@@ -2,7 +2,7 @@
 
 import React, { FC } from 'react'
 import { usePlayer } from './usePlayer'
-import styles from 'VideoPlayer.module.scss'
+import styles from './VideoPlayer.module.scss'
 import cn from 'classnames'
 import { IoPause, IoPlay } from 'react-icons/io5'
 import { BsFullscreen } from 'react-icons/bs'

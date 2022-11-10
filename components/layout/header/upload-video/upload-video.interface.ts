@@ -1,8 +1,9 @@
-import { Dispatch, SetStateAction } from "react"
+/** @format */
 
+import { Dispatch, SetStateAction } from 'react'
 
 export interface IUploadModal {
-   isOpen: boolean
-   setIsOpen: Dispatch<SetStateAction<boolean>>
-   videoId: number
+  isOpen: boolean
+  setIsOpen: Dispatch<SetStateAction<boolean>>
+  videoId: number
 }

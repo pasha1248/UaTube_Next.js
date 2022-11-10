@@ -30,12 +30,14 @@ const ProfileMenu = (props: Props) => {
   return (
     <div ref={ref} className={styles.wrapper}>
       <button onClick={() => setIsShow(!isShow)}>
-        <Image
-          src={data?.avatarPath || ''}
-          alt={data?.name || ''}
+        <img
+          src={
+            data?.avatarPath ||
+            'http://cdn-icons-png.flaticon.com/512/147/147142.png'
+          }
+          alt={data?.name || 'avatar'}
           width={40}
           height={40}
-          priority
         />
         <span className={styles.name}>{data?.name}</span>
         {isShow ? <GoChevronUp /> : <GoChevronDown />}
